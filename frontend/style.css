@@ -50,7 +50,22 @@ body {
 .header-color .pattern-relative {
   overflow: hidden;
   position: absolute;
-  top: 10px;
+}
+.header-color .maintext-relative {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bigtext {
+  font-size: 4.4rem;
+  color: #f5f7fb;
+  text-shadow: 1px 1px 10px 10px black;
+
+  font-family: "Montserrat", sans-serif;
+  font-family: "Playfair Display", serif;
 }
 
 .pattern-image {
