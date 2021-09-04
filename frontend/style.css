@@ -1,0 +1,67 @@
+body {
+  /* background-color: #f5f7fb; */
+  background-image: linear-gradient(to bottom right, white, #f5f7fb);
+}
+.header-class {
+  opacity: 1;
+}
+.header-class .header-color {
+  position: relative;
+  background-image: linear-gradient(
+    to top right,
+    rgba(255, 0, 0, 0.548),
+    rgba(0, 0, 255, 0.548)
+  );
+  height: 100vh;
+}
+
+.header-color .below-mask {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.header-color-relative {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 80%;
+}
+.header-characters-image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.header-characters-image .character-1 {
+  position: absolute;
+  bottom: 30px;
+  /* right: 60px; */
+  right: 0;
+}
+.header-characters-image .character-2 {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.header-characters-image .character-3 {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+/* .image-width {
+  width: 100%;
+} */
+
+.circle-background {
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e5e5f7 10px
+    ),
+    repeating-linear-gradient(#ccceff55, #ccceff);
+}
