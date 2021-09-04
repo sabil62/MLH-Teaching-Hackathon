@@ -67,6 +67,26 @@ body {
   font-family: "Montserrat", sans-serif;
   font-family: "Playfair Display", serif;
 }
+.button-relative {
+  z-index: 500;
+}
+.button-relative button {
+  padding: 16px;
+  width: 188px;
+  margin: 16px 20px;
+  border-radius: 50px;
+  background-color: #f5f7fb;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 12.2px;
+  font-weight: 600;
+  color: #5238b1;
+  cursor: pointer;
+}
+.button-relative button:hover {
+  background-color: rgb(255, 236, 255);
+}
 
 .pattern-image {
   object-fit: cover;
