@@ -6,6 +6,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { XRControllerModelFactory } from 'three/examples/jsm/webxr/XRControllerModelFactory.js';
 import { XRHandModelFactory } from 'three/examples/jsm/webxr/XRHandModelFactory.js';
 
+const tmpVector1 = new THREE.Vector3();
+const tmpVector2 = new THREE.Vector3();
+
 let App = class App {
     constructor() {
         const container = document.createElement('div');
@@ -28,6 +31,9 @@ let App = class App {
         );
         room.geometry.translate(0, 3, 0);
         this.scene.add(room);
+
+        this.addColors();
+        this.drawColor = 0xfdffbf
 
         this.controls = new OrbitControls(this.camera, container);
         this.controls.target.set(0, 1.6, 0);
@@ -96,8 +102,7 @@ let App = class App {
                     else if (name === 'left'){
                         theHand = this.leftHand;
                         let indexTip = theHand.joints['index-finger-tip'];
-                        let thumbTip = theHand.joints['thumb-tip'];
-                        this.checkPinch(indexTip, thumbTip, name)
+                        this.checkTouch(indexTip, name)
                     }
                     else{
                         console.log('Hands not being tracked...')
@@ -120,13 +125,80 @@ let App = class App {
                 console.log(hand + "PINCHING")
                 let geometryPinch = new THREE.SphereBufferGeometry(0.01, 30, 30);
                 let materialPinch = new THREE.MeshStandardMaterial({
-                     color: hand == 'right' ? 0xfdffbf : Math.random() * 0xffffff 
+                     color: this.drawColor
                 });
                 let spherePinch = new THREE.Mesh(geometryPinch, materialPinch);
                 spherePinch.position.set(indexTip.position.x, indexTip.position.y, indexTip.position.z);
                 this.scene.add(spherePinch);
             }
         }
+    }
+
+    checkTouch(indexTip, hand) {
+        const distanceIndex1 = indexTip.getWorldPosition(tmpVector1).distanceTo(this.plane1.getWorldPosition(tmpVector2));
+        if (distanceIndex1 < 0.05) {
+            console.log('Touch White')
+            this.drawColor = 0xffffff
+        }
+
+        const distanceIndex2 = indexTip.getWorldPosition(tmpVector1).distanceTo(this.plane2.getWorldPosition(tmpVector2));
+        if (distanceIndex2 < 0.05) {
+            console.log('Touch Yellow')
+            this.drawColor = 0xffff00
+        }
+
+        const distanceIndex3 = indexTip.getWorldPosition(tmpVector1).distanceTo(this.plane3.getWorldPosition(tmpVector2));
+        if (distanceIndex3 < 0.05) {
+            console.log('Touch Red')
+            this.drawColor = 0xff0000
+        }
+
+        const distanceIndex4 = indexTip.getWorldPosition(tmpVector1).distanceTo(this.plane4.getWorldPosition(tmpVector2));
+        if (distanceIndex4 < 0.05) {
+            console.log('Touch Blue')
+            this.drawColor = 0x0000ff
+        }
+
+        const distanceIndex5 = indexTip.getWorldPosition(tmpVector1).distanceTo(this.plane5.getWorldPosition(tmpVector2));
+        if (distanceIndex5 < 0.05) {
+            console.log('Touch Green')
+            this.drawColor = 0x00ff00
+        }
+
+    }
+
+    addColors(){
+        const geometry = new THREE.PlaneGeometry( 0.1, 0.1 );
+        const material1 = new THREE.MeshBasicMaterial( {color: 0xffffff, side: THREE.DoubleSide} );
+        const material2 = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+        const material3 = new THREE.MeshBasicMaterial( {color: 0xff0000, side: THREE.DoubleSide} );
+        const material4 = new THREE.MeshBasicMaterial( {color: 0x0000ff, side: THREE.DoubleSide} );
+        const material5 = new THREE.MeshBasicMaterial( {color: 0x00ff00, side: THREE.DoubleSide} );
+
+        this.plane1 = new THREE.Mesh( geometry, material1 );
+        this.plane2 = new THREE.Mesh( geometry, material2 );
+        this.plane3 = new THREE.Mesh( geometry, material3 );
+        this.plane4 = new THREE.Mesh( geometry, material4 );
+        this.plane5 = new THREE.Mesh( geometry, material5 );
+
+        this.scene.add( this.plane1 );
+        this.scene.add( this.plane2 );
+        this.scene.add( this.plane3 );
+        this.scene.add( this.plane4 );
+        this.scene.add( this.plane5 );
+
+        this.plane1.position.set(-0.1, 0.8, 0.1);
+        this.plane2.position.set(-0.1, 0.8, 0.2);
+        this.plane3.position.set(-0.1, 0.8, 0.3);
+        this.plane4.position.set(-0.1, 0.8, 0.4);
+        this.plane5.position.set(-0.1, 0.8, 0.5);
+
+        this.plane1.rotation.set(0, 80, 0);
+        this.plane2.rotation.set(0, 80, 0);
+        this.plane3.rotation.set(0, 80, 0);
+        this.plane4.rotation.set(0, 80, 0);
+        this.plane5.rotation.set(0, 80, 0);
+
     }
 
     resize() {
