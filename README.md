@@ -7,10 +7,6 @@
 - It also provides a chat option using Twilio API to chat using the class. 
 
 
-### Overview:
-
-<img src=""/>
-
 ### Table of Contents
 
 ‒ [Hosting](#hosting)  
