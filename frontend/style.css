@@ -1,6 +1,6 @@
 body {
   /* background-color: #f5f7fb; */
-  background-image: linear-gradient(to bottom right, white, #f5f7fb);
+  background-image: linear-gradient(to bottom, white, #f5f7fb);
 }
 .header-class {
   opacity: 1;
@@ -168,7 +168,7 @@ body {
   color: rgb(240, 245, 248);
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
-  padding: 24px 60px;
+  padding: 54px 60px;
 }
 .footer-heading {
   font-weight: 600;
@@ -191,5 +191,32 @@ body {
   justify-content: center;
   color: white;
   background-color: rgb(22, 22, 42);
-  padding: 12px;
+  padding: 14px;
+}
+
+.second-section {
+  margin: 120px 30px;
+  padding-bottom: 120px;
+}
+
+.second-img {
+  opacity: 1;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.second-img .heighter {
+  height: 280px;
+}
+
+.why-us {
+  font-size: 52px;
+  text-shadow: 1px 1px 10px 10px black;
+
+  font-family: "Montserrat", sans-serif;
+  font-family: "Playfair Display", serif;
+  padding: 40px;
 }
