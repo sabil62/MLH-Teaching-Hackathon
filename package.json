@@ -1,18 +1,27 @@
 {
-  "name": "teachusingtech",
+  "name": "mlh-teaching-hackathon",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"# Teaching-MLH\"",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "dev": "snowpack dev",
+    "build": "snowpack build",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabil62/MLH-Teaching-Hackathon.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sabil62/MLH-Teaching-Hackathon/issues"
+  },
+  "homepage": "https://github.com/sabil62/MLH-Teaching-Hackathon#readme",
+  "devDependencies": {
+    "snowpack": "^3.8.8"
+  },
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
     "three": "^0.132.2"
   }
 }
