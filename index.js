@@ -1,5 +1,6 @@
 import {
-    Drawing
+    Drawing,
+    Shapes
 } from "./apps";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -7,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     switch (window.location.pathname) {
         case "/draw3d":
             app = new Drawing();
+            break;
+        case "/shapes":
+            app = new Shapes();
             break;
         default:
             const indexContainer = document.querySelector(".all-content");
