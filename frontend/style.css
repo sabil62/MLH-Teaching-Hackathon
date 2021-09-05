@@ -160,3 +160,15 @@ body {
     ),
     repeating-linear-gradient(#ccceff55, #ccceff);
 }
+
+.footer-first {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: rgb(32, 32, 60);
+  color: rgb(240, 245, 248);
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer-first span {
+  display: inline-blocj;
+}
