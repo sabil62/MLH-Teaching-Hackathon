@@ -167,8 +167,29 @@ body {
   background-color: rgb(32, 32, 60);
   color: rgb(240, 245, 248);
   font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  padding: 24px 60px;
+}
+.footer-heading {
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .footer-first span {
-  display: inline-blocj;
+  display: block;
+  margin: 8px 0;
+  cursor: pointer;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-second {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: rgb(22, 22, 42);
+  padding: 12px;
 }
