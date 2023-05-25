@@ -20,6 +20,7 @@ Chat Documentation: https://github.com/sabil62/MLH-Teaching-Hackathon/tree/chat
 ## :airplane: Hosting
 
 Project is currently hosted on:
+- [https://teach-using-techs.netlify.app/](https://teach-using-techs.netlify.app/) 
 - [https://teachusing.tech/](https://teachusing.tech/) (Thank you Domain.com!)
 - [https://bestwayto.study/](https://bestwayto.study/) (Thank you Godaddy!)
 - Chat URL: https://mlh-hack-chat.azurewebsites.net/chat/
